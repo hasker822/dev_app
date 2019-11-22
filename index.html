@@ -9,37 +9,78 @@
     <script defer src="main.js"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="title">
-            упражнения
-        </div>
-        <div class="content">
-            <div class="wrapper">
-                <div class="block">
-                    <img src="" alt="img">
-                    <div class="cape"></div>
-                </div>
-                <div class="block">
-                    <img src="" alt="img">
-                    <div class="cape"></div>
-                </div>
-                <div class="block">
-                    <img src="" alt="img">
-                    <div class="cape"></div>
+    <div class="loader">
+        Load...
+    </div>
+    <div class="app">
+        <div class="wrapper page1 page">
+            <div class="title">
+                моя тренировка
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <div class="addInput">
+                        <span>Добавить тренировку</span>
+                        <div class="btnAdd" id="addTrainingBtn"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="wrapper page2 page">
+            <div class="title">
+                упражнения
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <div class="block">
+                        <img src="./img/images/FOOTBALL.jpg" alt="img">
+                        <div class="cape">
+                            <div class="title">удары</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="./img/images/xavi_pass.jpg" alt="img">
+                        <div class="cape">
+                            <div class="title">пасс</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="./img/images/shutterstock_318918836.jpg.61b58a5b6c0ec5b9839ec5d60a710aed.jpg" alt="img">
+                        <div class="cape">
+                            <div class="title">дриблинг</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="./img/images/JadonSancho.png" alt="img">
+                        <div class="cape">
+                            <div class="title">прием</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper page3 page">
+            <div class="title">
+                упражнения
+            </div>
+            <div class="content">
+                <div class="wrapper profileFather">
+                    <div class="addInput">
+                        <span><a href="./AddprofilePage/index.html">Добавить профиль</a></span>
+                        <a href="./AddprofilePage/index.html"><div class="btnAdd"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="navigation">
+            <div class="navigation_items MY_WORK">       
+            </div>
+            <div class="navigation_items size64 ECS">
+            </div>
+            <div class="navigation_items PROFILE">
+            </div>
+        </div>
     </div>
-    <div class="navigation">
-        <div class="navigation_items">
-                <img src="./img/icons/ordinaryIcons/football (3).svg" alt="navigationIcon">
-        </div>
-        <div class="navigation_items">
-                <img src="./img/icons/ordinaryIcons/cone (1).svg" alt="navigationIcon">
-        </div>
-        <div class="navigation_items">
-                <img src="./img/icons/ordinaryIcons/resume (1).svg" alt="navigationIcon">
-        </div>
-    </div>
+    
 </body>
 </html>

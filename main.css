@@ -1,3 +1,4 @@
+/* main settings */
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +10,40 @@ body{
     font-family: 'Segoe UI';
     text-transform: uppercase;
 }
+/* Loader */
+.loader{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    z-index: 10000;
+    position: fixed;
+    transition: .7s;
+}
+.done{
+    opacity: 0 ;
+}
+.none{
+    display: none;
+}
+/* All GUI styling */
+body .app{
+    width: 100%;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.app .pageActive{
+    display: block !important;
+}
+.app .page{
+    display: none;
+}
+
 .wrapper{
     max-width: 368px;
     width: 100%;
@@ -21,29 +56,233 @@ body{
     text-align: center;
     padding: 4% 0;
 }
-.content .block{
+.app  .block{
     width: 100%;
     height: 170px;
     background: #fff;
     border-radius: 20px 0 0 0;
     margin-bottom: 40px;
+    position: relative;
 }
-.navigation{
+.app .block .cape{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: rgba(0,0,0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .app  .block .cape .title{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.block:last-child{
+    margin-bottom: 84px;
+}
+.app .block img{
+    width: 100%;
+    height: 100%;
+}
+ .addInput{
+    width: 100%;
+    height: 60px;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: none;
+    font-weight: normal;
+}
+.addInput .btnAdd{
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/icons/ordinaryIcons/add-icon.svg');
+    background-size: cover;
+}
+.activeBtn{
+    background: #fff !important;
+}
+.app .navigation{
     display: flex;
     justify-content: space-around;
     width: 100%;
+    align-items: center;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 100;
     background: #000;
     padding: 10px 0;
 }
 .navigation .navigation_items{
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
 }
-.navigation .navigation_items img{
+.navigation .size64{
+    width: 64px !important;
+    height: 64px !important;
+}
+.navigation .MY_WORK{
+    background: url('./img/icons/ordinaryIcons/football\ \(3\).svg');
+    background-size: cover;
+    color: green;
+}
+.navigation .ECS{
+    background: url('./img/icons/ordinaryIcons/cone\ \(1\).svg');
+    background-size: cover;
+}
+.navigation .PROFILE{
+    background: url('./img/icons/ordinaryIcons/resume\ \(1\).svg');
+    background-size: cover;
+}
+.navigation .activeBtn1{
+    background: url('./img/icons/activeIcons/football\ \(4\).svg');
+    background-size: cover;
+}
+.navigation .activeBtn2{
+    background: url('./img/icons/activeIcons/cone\ \(2\).svg');
+    background-size: cover;
+}
+.navigation .activeBtn3{
+    background: url('./img/icons/activeIcons/resume\ \(2\).svg');
+    background-size: cover;
+}
+/* profile register page styling */
+.wrap{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+.profileInput{
+    width:100%;
+    padding: 10px 0 10px 10px ;
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+.profileInput:hover{
+    outline: none;
+}
+.profileInput option{
+    color: #000000;
+}
+.profileInput::placeholder{
+    color: #ffffff;
+}
+.btnSave{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3AC859;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+    font-size: 22px;
+}
+/* profile page styling */
+.page3 .profile{
     width: 100%;
     height: 100%;
+    text-transform: none;
+    position: relative;
+}
+.profile .top{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.profile .profileBlock{
+    width: 100%;
+    background: #1653CE;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+.profile .profileBlock .profileName{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.profile .profileBlock .profileName .avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #000;
+    margin-right: 10px;
+}
+.profile .box .text {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.profile .level{
+    display: flex;
+    font-weight: bold;
+}
+.profile .level .level_box{
+    width: 25px;
+    height: 25px;
+    border: 1px solid #3AC859;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    font-weight: normal;
+}
+.profile .favTeamBlock{
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    background: #4FC96A;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+.profile .changeProfile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background: #1653CE;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 64px;
+}
+.profile .onlyWrap{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+@media screen and (min-width: 365px){
+    .page{
+        margin: 0 auto;
+    }
+    .wrapper{
+        max-width: 450px !important;
+    }
+    .wrapper .block {
+        height: 220px !important;
+    }
 }
