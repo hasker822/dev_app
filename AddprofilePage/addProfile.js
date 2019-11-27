@@ -1,5 +1,6 @@
 let saveBtn = document.querySelector('.btnSave');
 
+
 saveBtn.addEventListener('touchstart', function() {
     let nameInpt    = document.querySelector('#inputName').value,
         ageInpt     = document.querySelector('#inputAge').value,

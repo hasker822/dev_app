@@ -1,21 +1,5 @@
-document.body.onload = function() {
-
-    setTimeout(() => {
-        let preloader = document.querySelector('.loader');
-    
-        if(!preloader.classList.contains('done')) {
-            preloader.classList.add('done');
-            if(preloader.classList.contains('done')) {
-                setTimeout(() => {
-                   preloader.classList.add('none') ;
-                }, 1000);
-            } 
-        }
-    }, 2000);
-    
-}
-
 window.addEventListener('DOMContentLoaded', function() {
+    // get all elements from page
     let MY_WORK_btn  = document.querySelector('.MY_WORK');
     let ECS_btn      = document.querySelector('.ECS');
     let PROFILE_btn  = document.querySelector('.PROFILE');
@@ -23,7 +7,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let btns         = document.querySelectorAll('.navigation_items');
     let pageIndex    = 1;
 
-
+    // algorithm of change page
     function setPage() {
         
         pages.forEach((item) => item.classList.remove('pageActive'));
@@ -69,8 +53,17 @@ window.addEventListener('DOMContentLoaded', function() {
         texFunc(setPage);
     });
 
+    // Checking whether added profile or not
     if(localStorage.getItem('UserData') !== null) {
         let div = document.querySelector('.profileFather');
         div.innerHTML = localStorage.getItem('UserData');
+        
+        let changeProfileBtn = document.querySelector('.changeProfile');
+
+        // chenge btn
+        changeProfileBtn.addEventListener('touchstart', function() {
+            document.location.assign('./AddprofilePage/index.html');
+        });
     }
+
 });

@@ -10,6 +10,9 @@ body{
     font-family: 'Segoe UI';
     text-transform: uppercase;
 }
+a{
+    -webkit-tap-highlight-color: transparent !important;
+}
 /* Loader */
 .loader{
     display: flex;
@@ -39,6 +42,7 @@ a{
 }
 .app .pageActive{
     display: block !important;
+    animation: fade 0.5s;
 }
 .app .page{
     display: none;
@@ -172,6 +176,9 @@ a{
     margin-bottom: 10px;
     color: #ffffff;
 }
+.last{
+    margin-bottom: 70px;
+}
 .profileInput:hover{
     outline: none;
 }
@@ -187,7 +194,7 @@ a{
     justify-content: center;
     align-items: center;
     background: #3AC859;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     padding: 20px 0;
@@ -273,8 +280,53 @@ a{
     align-items: flex-end;
 }
 
+/* styling ExecisePage */
+.exercisesPage {
+    padding-top: 45px;
+}
+.exercisesPage .line{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: #000000;
+}
+.exercisesPage .block:last-child{
+    margin-bottom: 10px;
+}
+.exercisesPage .block .cape{
+    background: rgb(0, 0, 0, .76);
+}
+.exercisesPage .block .title{
+    font-size: 28px !important;
+}
+.exercisesPage .block .title::after{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #31AE4D;
+    margin: 5px auto;
+}
 
 
+
+
+
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
 @media screen and (min-width: 365px){
     .page{
         margin: 0 auto;
@@ -284,5 +336,10 @@ a{
     }
     .wrapper .block {
         height: 220px !important;
+    }
+}
+@media screen and (max-height: 569px) {
+    .profile .changeProfile{
+        margin-bottom: 90px !important;
     }
 }
