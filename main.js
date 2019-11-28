@@ -53,6 +53,18 @@ window.addEventListener('DOMContentLoaded', function() {
         texFunc(setPage);
     });
 
+    let trainingBtn = document.querySelector('.page1 .addInput');
+
+    trainingBtn.addEventListener('touchstart', function() {
+        let texFun = function(func) {
+            setTimeout(() => {
+                pageIndex = 2;
+                func();
+            }, 100);
+        };
+        texFun(setPage);
+    });
+    
     // Checking whether added profile or not
     if(localStorage.getItem('UserData') !== null) {
         let div = document.querySelector('.profileFather');
@@ -64,6 +76,12 @@ window.addEventListener('DOMContentLoaded', function() {
         changeProfileBtn.addEventListener('touchstart', function() {
             document.location.assign('./AddprofilePage/index.html');
         });
+    }
+
+    // Checking whether added any training or not
+    if(localStorage.getItem('trainingExs') !== null) {
+        let div = document.querySelector(' .content');
+        div.innerHTML = localStorage.getItem('trainingExs');
     }
 
 });

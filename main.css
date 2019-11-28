@@ -40,12 +40,16 @@ a{
     text-decoration: none;
     color: #ffffff;
 }
+
 .app .pageActive{
     display: block !important;
     animation: fade 0.5s;
 }
 .app .page{
     display: none;
+}
+.app .page1{
+    padding: 0 !important;
 }
 
 .wrapper{
@@ -64,7 +68,6 @@ a{
     width: 100%;
     height: 170px;
     background: #fff;
-    border-radius: 20px 0 0 0;
     margin-bottom: 40px;
     position: relative;
 }
@@ -85,8 +88,8 @@ a{
     font-weight: bold;
 }
 
-.block:last-child{
-    margin-bottom: 84px;
+.page .block:last-child{
+    margin-bottom: 84px !important;
 }
 .app .block img{
     width: 100%;
@@ -314,6 +317,34 @@ a{
     margin: 5px auto;
 }
 
+/* exercisePage */
+.exercisePage{
+    animation: moveRight .4s;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.exercisePage img{
+    width: 100%;
+}
+.exercisePage .line{
+    width: 100%;
+}
+.exercisePage .title{
+    font-size: 20px ;
+}
+.exercisePage .wrap{
+    justify-content: space-around;
+}
+.exercisePage .prevBtn, .addToTrainingBtn{
+    width: 20px;
+    height: 20px;
+}
+.exercisePage .text{
+    text-transform: none;
+}
 
 
 
@@ -325,6 +356,14 @@ a{
     }
     to{
         opacity: 1;
+    }
+}
+@keyframes moveRight{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 0;
     }
 }
 @media screen and (min-width: 365px){
